@@ -4,6 +4,23 @@ Agent skills and MCP config for [SunoMV](https://suno.bi?utm_source=github&utm_m
 
 **Status: preview.** The MCP server is at `https://suno.bi/api/mcp` (OAuth 2.1 + PKCE, or an `sk_mv_` key from [suno.bi/user/integration](https://suno.bi/user/integration)). The creation tools below are rolling out with the next suno.bi release; if your client only lists `list_my_mvs`, they are not live yet.
 
+Docs: [suno.bi/mcp](https://suno.bi/mcp?utm_source=github&utm_medium=sunomv-skill) · Skill page: [suno.bi/skills](https://suno.bi/skills?utm_source=github&utm_medium=sunomv-skill)
+
+## Install
+
+Skill only (Claude Code, Codex, Cursor, Gemini CLI, …):
+
+```bash
+npx skills add mofa-si/sunomv-skill --skill song-to-mv
+```
+
+Claude Code plugin (MCP server + skill in one go), inside Claude Code:
+
+```
+/plugin marketplace add mofa-si/sunomv-skill
+/plugin install sunomv@sunomv
+```
+
 ## Connect
 
 ```json

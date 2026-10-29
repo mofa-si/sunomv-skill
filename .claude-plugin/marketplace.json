@@ -1,0 +1,20 @@
+{
+  "name": "sunomv",
+  "owner": {
+    "name": "SunoMV",
+    "email": "hi@evergreenai.cn"
+  },
+  "metadata": {
+    "description": "SunoMV's Claude plugin: the hosted SunoMV MCP server plus the song-to-mv skill to turn a Suno song into a music video."
+  },
+  "plugins": [
+    {
+      "name": "sunomv",
+      "source": "./",
+      "description": "Turn a Suno song into a lyric music video, one approved step at a time, with the hosted SunoMV MCP server and the song-to-mv skill.",
+      "version": "0.2.1",
+      "category": "productivity",
+      "homepage": "https://suno.bi/skills?utm_source=claude-plugin&utm_medium=agent-plugin"
+    }
+  ]
+}
