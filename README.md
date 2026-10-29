@@ -2,7 +2,7 @@
 
 Agent skills and MCP config for [SunoMV](https://suno.bi?utm_source=github&utm_medium=sunomv-skill): turn a Suno song into a music video from Claude, ChatGPT, Cursor or any MCP client.
 
-**Status: early preview.** The MCP server is live at `https://suno.bi/api/mcp` (OAuth 2.1 + PKCE, or an `sk_mv_` key from [suno.bi/user/integration](https://suno.bi/user/integration)). Right now it exposes one read-only tool, `list_my_mvs`. The `song-to-mv` skill and the paid creation tools ship next.
+**Status: preview.** The MCP server is at `https://suno.bi/api/mcp` (OAuth 2.1 + PKCE, or an `sk_mv_` key from [suno.bi/user/integration](https://suno.bi/user/integration)). The creation tools below are rolling out with the next suno.bi release; if your client only lists `list_my_mvs`, they are not live yet.
 
 ## Connect
 
@@ -16,16 +16,23 @@ Agent skills and MCP config for [SunoMV](https://suno.bi?utm_source=github&utm_m
 
 Claude Code: `claude mcp add --transport http sunomv https://suno.bi/api/mcp`
 
-## Planned workflow
+## Tools
 
-Works step by step, so you only pay for what you keep:
+| Tool | What it does | Credits |
+|---|---|---|
+| `create_mv_project` | Import a Suno link, suno.bi song or audio / video link; align lyrics; write the storyboard | Free for members; one-time song unlock otherwise |
+| `get_mv_project` | Progress, every shot and scene with status and URLs, and the next step | Free |
+| `generate_stills` | Draw storyboard stills, many shots per call | Per image |
+| `shoot_clips` | Turn scenes into video clips | Per second of video |
+| `lipsync_clips` | Make the singer's mouth follow the vocals | Per scene |
+| `export_mv` | Render the MP4; email with the link when ready | Free for members; one-time song unlock otherwise |
+| `list_my_mvs` | Finished videos | Free |
 
-1. Import a Suno song (link, audio URL or suno.bi song id) and get storyboard stills.
-2. Happy with the stills? Animate the scenes you want into video clips.
-3. Optional lip sync for singing shots.
-4. Export; you get a suno.bi link and an email when the video is ready.
+Every paid tool quotes first: call it without `max_credits` to get the price, then call again with `max_credits` after the user agrees.
 
-Every paid step quotes the credits first and only charges after you confirm.
+## Skill
+
+[`skills/song-to-mv`](skills/song-to-mv/SKILL.md) tells the agent to go one step at a time: stills first, video only after you like them, then optional lip sync and export.
 
 ## License
 
