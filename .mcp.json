@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sunomv": {
+      "type": "http",
+      "url": "https://suno.bi/api/mcp"
+    }
+  }
+}

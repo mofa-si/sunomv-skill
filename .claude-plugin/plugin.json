@@ -1,0 +1,14 @@
+{
+  "name": "sunomv",
+  "version": "0.1.0",
+  "description": "Turn a Suno song into a lyric music video: storyboard stills first, then animated clips and lip sync, through the hosted SunoMV MCP server.",
+  "author": {
+    "name": "SunoMV",
+    "email": "hi@evergreenai.cn",
+    "url": "https://suno.bi"
+  },
+  "repository": "https://github.com/mofa-si/sunomv-skill",
+  "license": "MIT",
+  "keywords": ["suno", "music-video", "lyric-video", "mv", "agent-skill", "claude-code", "mcp", "sunomv"],
+  "homepage": "https://suno.bi?utm_source=claude-plugin&utm_medium=agent-plugin"
+}
